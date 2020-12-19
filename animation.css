@@ -5,28 +5,21 @@
 }
 body{
     background-color: blanchedalmond;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 .outer{
     display: flex;
     margin: 2rem auto;
     width: 100vw;
     height: 25rem;
     background-color: rgba(51, 50, 50);
-   /* position: relative;
-    transition: all ease-out .3s;*/
 }
 .inner{
     margin: 2rem auto;
     width: 14rem;
     height: 19rem;
     position: relative;
-   /* left: 50%;
-    top: 50%;
-
-    transform: translate(-50%,-50%);*/
     overflow: hidden;
-    /*box-shadow: -.1rem -.1rem .2rem; */
 }
 .cubic-left{
     background-color: blanchedalmond;
@@ -35,22 +28,41 @@ body{
     position: absolute;
     border-right: .2rem solid rgba(51, 50, 50, 0.76);
     left: -5%;
-    transition: all .8s ease-in .1s;
+    top: 0;
+    transition: all .4s ease-in .1s;
+    overflow: hidden;
 }
 .cubic-right{
-    height: 90%;
-    width: 100%;
-    top: 5%;
     background-image:  linear-gradient(to right bottom,rgb(255, 68, 0) 10%, rgb(255, 166, 0));
+    width: 100%;
+    height: 94%;
     position: absolute;
     left: 95%;
-    transition: all .8s ease-in .1s;
+    top: 3%;
+    transition: all .4s ease-in .1s;
+    overflow: hidden;
 }
-.inner:hover > .cubic-left, .inner:hover  .cubic-right{
+.inner:hover>.cubic-left, .inner:hover>.cubic-right{
     transform: translateX(-90%);
 }
+.text-box-a{
+    left: 0;   
+}
+.text-box-b{
+    left: -200%;
+    top: 0;
+}
+.text-box-a,.text-box-b{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all .4s ease-in .1s;
+    overflow: hidden;
+}
+.inner:hover .text-box-a,.inner:hover .text-box-b{
+   transform: translateX(200%);
+}
 h2{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: right;
     text-transform: uppercase;
     font-size: 1.8rem;
@@ -60,36 +72,11 @@ h2{
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    z-index: -10;    
 }
- h5 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 500;
+ h5{
+    text-align: left;
     font-size: .8rem;
+    font-weight: 500;
     padding: .7rem;
     margin-top: .5rem;
-    z-index: -1;
-}
-.text-box-a{
-    position: absolute;
-    transition: all .5s ease-in .1s;
-    width: 100%;
-    height: 100%;
-    transition: all .8s ease-in .1s;
-}
-.inner:hover .text-box-a {
-   transform: translateX(200%);
-}
-.text-box-b{
-    position: absolute;
-    top: 0;
-    left: -100%;
-    transition: all .5s ease-in .1s;
-    width: 100%;
-    height: 100%;
-    transition: all .8s ease-in .1s;
-    overflow: hidden;
-}
-.inner:hover .text-box-b {
-   transform: translateX(100%);
 }
