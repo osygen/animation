@@ -6,20 +6,27 @@
 body{
     background-color: blanchedalmond;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 9rem;
 }
 .outer{
     display: flex;
-    margin: 2rem auto;
-    width: 100vw;
-    height: 25rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin:.5rem auto;
+    padding: 0.5rem 1rem;
+    width: auto;
+    height: auto;
     background-color: rgba(51, 50, 50);
+    overflow: hidden;
 }
 .inner{
-    margin: 2rem auto;
     width: 14rem;
+    margin: .1rem 1.2rem;
     height: 19rem;
     position: relative;
     overflow: hidden;
+    flex: 0 0 auto;
 }
 .cubic-left{
     background-color: blanchedalmond;
