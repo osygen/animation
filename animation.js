@@ -1,51 +1,12 @@
-const dB =[{
-    productName: "forrest tycoon",
-    discription: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    productID:"1",
-    colourCode:"green"
-},{
-    productName: "ocean explorer",
-    discription: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    productID:"2",
-    colourCode:"blue"
-},{
-    productName: "mountain bikers",
-    discription: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    productID:"3",
-    colourCode: "brown"
-},{
-    productName: "concrete jungle",
-    discription: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    productID:"4",
-    colourCode: "concrete"
-},{
-    productName: "volcanic springs",
-    discription: "...",
-    productID:"5",
-    colourCode: "red"
-},{
-    productName: "..coming soon",
-    discription: "...",
-    productID:"5",
-    colourCode: ""
-}];
+const template =document.getElementById("pulldB").innerHTML;
 
-  items = (item) =>{
-        return `<div class="inner">
-                <div class="cubic-left">
-                   <div class="text-box-a">
-                     <h2 class="${item.colourCode}">${item.productName}</h2>
-                   </div>  
-                 </div>
-                <div class="cubic-right ${item.colourCode}">
-                     <div class="text-box-b">
-                     <h5>${item.discription}</h5>
-                   </div>   
-                </div>
-             </div>`;
+const replaceTemp=(item,temp)=>{
+        let output = temp.replace(/{{colour}}/g,item.colourCode);
+        output= output.replace(/{{name}}/g,item.productName);
+        return output= output.replace(/{{detail}}/g,item.discriptions);
 };
 
-var tempBuild= dB.map(items).join('');
+const tempBuild= dB.map(dbItem=>replaceTemp(dbItem,template)).join('');
 document.getElementById("pulldB").innerHTML=tempBuild;
 
 var backColor;
